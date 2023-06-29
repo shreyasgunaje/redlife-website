@@ -1,0 +1,73 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.header_container{
+    background-color: $red;
+    .MuiBox-root{
+        display: flex;
+        .title_container{
+            display: flex;
+            padding: 1%;
+            .header_icon{
+                width: 35px;
+                max-height: 35px;
+                margin-left: 20px;
+            }
+            .header_title{
+                color: $white;
+                font-size: 1.6em;
+                font-family: GillSans-BoldItalic;
+            }
+        }
+        .MuiList-root{
+            display: flex;
+            .MuiButtonBase-root{
+                padding: 8px 24px;
+                flex: none;
+                min-width: 135px;
+                .MuiListItemText-root{
+                    .MuiTypography-root{
+                        color: $white;
+                        font-size: 0.9em;
+                        font-family: GillSans;
+                        text-align: center;
+                    }
+                }
+                &.Mui-selected{
+                    background-color: $light_red;
+                    .MuiListItemText-root{
+                        .MuiTypography-root{
+                            color: $red;
+                            font-family: GillSans-Medium;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .header_navitem{
+        color: $white;
+        font-size: 0.9em;
+        font-family: GillSans;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+    .header_navitem:hover{
+        text-decoration: underline;
+        font-family: GillSans-Medium;
+    }
+    .header_navbutton{
+        background-color: $white;
+        color: $red;
+        font-size: 0.9em;
+        font-family: GillSans-Medium;
+        margin-left: 16px;
+        border-radius: 4px;
+    }
+    .header_navbutton:hover{
+        background-color: $light_red;
+        color: $white;
+    }
+}
