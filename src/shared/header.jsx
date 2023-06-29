@@ -14,6 +14,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 // import { NavToggleIcon, TicketIcon } from './icon.tsx';
 import {AppBar, Typography,Toolbar} from '@mui/material';
 import header_icon from '../assets/images/icon.png';
+import {useNavigate, useLocation} from 'react-router-dom';
 
 function LogInUserIcon(props) {
 	return (
@@ -125,6 +126,9 @@ function Header() {
 	const handleRefreshToHomePage = () => {
 		window.location.href = '/';
 	}
+
+	const navigate = useNavigate();
+	const location = useLocation();
   return (
     // <div >
     //     <AppBar>
