@@ -21,6 +21,8 @@
         }
         .MuiList-root{
             display: flex;
+            margin-left: 100px;
+            padding: 0;
             .MuiButtonBase-root{
                 padding: 8px 24px;
                 flex: none;
@@ -34,7 +36,7 @@
                     }
                 }
                 &.Mui-selected{
-                    background-color: $light_red;
+                    background-color: $white;
                     .MuiListItemText-root{
                         .MuiTypography-root{
                             color: $red;
@@ -44,30 +46,26 @@
                 }
             }
         }
+        .right_container{
+            display: flex;
+            align-items: center;
+            margin-left: 120px;
+            .login_btn{
+                background-color: $white;
+                width: 130px;
+                height: 40px;
+                padding: 6px 13px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: none;
+                border-radius: 0px;
+                font-size: 0.9em;
+                font-family: GillSans-Medium;
+                color: $red;
+                text-transform: capitalize;
+            }
+        }
     }
-    
-    
-    .header_navitem{
-        color: $white;
-        font-size: 0.9em;
-        font-family: GillSans;
-        margin-left: 20px;
-        text-decoration: none;
-    }
-    .header_navitem:hover{
-        text-decoration: underline;
-        font-family: GillSans-Medium;
-    }
-    .header_navbutton{
-        background-color: $white;
-        color: $red;
-        font-size: 0.9em;
-        font-family: GillSans-Medium;
-        margin-left: 16px;
-        border-radius: 4px;
-    }
-    .header_navbutton:hover{
-        background-color: $light_red;
-        color: $white;
-    }
+
 }
