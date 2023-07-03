@@ -9,9 +9,7 @@ import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import {AppBar, Typography,Toolbar} from '@mui/material';
+import { Typography } from '@mui/material';
 import header_icon from '../assets/images/icon.png';
 import {useNavigate, useLocation} from 'react-router-dom';
 
@@ -129,36 +127,6 @@ function Header() {
 	const navigate = useNavigate();
 	const location = useLocation();
   return (
-    // <div >
-    //     <AppBar>
-    //         <Toolbar className='header_container'>
-	// 			<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
-    //     		<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
-	// 			{/* <Box>
-	// 				<List component="nav" aria-label='main mailbox folders'>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="FIND A DONOR"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="ORGANIZE A CAMP"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="ABOUT US"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="CONTACT US"/>
-	// 					</ListItemButton>
-	// 				</List>
-	// 			</Box> */}
-	// 			{/* <Link className='header_navitem'>FIND A DONOR</Link>
-	// 			<Link className='header_navitem'>ORGANIZE A CAMP</Link>
-	// 			<Link className='header_navitem'>ABOUT US</Link>
-	// 			<Link className='header_navitem'>CONTACT US</Link>
-	// 			<Button className='header_navbutton'>LOG IN</Button>
-	// 			<Button className='header_navbutton'>SIGN UP</Button> */}
-    //         </Toolbar>
-    //     </AppBar>
-    // </div>
 	<div className='header_container'>
 		<Box>
 			<div className='title_container'>

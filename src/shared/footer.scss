@@ -1,0 +1,40 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.footer_container{
+    background-color: $light_grey;
+    .MuiBox-root{
+        display: flex;
+        .footer_divider{
+            color: $grey;
+            margin: 1px 15px;
+        }
+        .top_container{
+            width: 100%;
+            .top_inner{
+                display: flex;
+                .title_container{
+                    display: flex;
+                    padding: 1%;
+                    .footer_icon{
+                        width: 35px;
+                        max-height: 35px;
+                        margin-left: 20px;
+                    }
+                    .footer_title{
+                        color: $red_2;
+                        font-size: 1.6em;
+                        font-family: GillSans-BoldItalic;
+                        span{
+                            color: $dark_red;
+                        }
+                    }
+                }
+                .social_stack{
+                    margin-left: 750px;
+                }
+            }
+            
+        }
+    }
+}
