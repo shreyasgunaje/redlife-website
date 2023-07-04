@@ -1,0 +1,87 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.container{
+    height: 100vh;
+.main_container
+{
+    background-color: $red;
+    height: 40%;
+    .top_container{
+        display:flex;
+        padding: 5%;
+        justify-content: center;
+        width: 100%;
+        .title_text
+         {
+          height: 100%;
+          .title_head
+          {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          float: left;
+          width: 100%;
+          height: 50%;
+          color: $white;
+          font-size: 2.6em;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          }
+          .text_content{
+            display: flex;
+            padding-top: 25px;
+            padding-left: 25px;
+            height: 50%;
+            text-align:center;
+            float: left;
+            width: 100%;
+            font-size: 1.3em;
+            color: $white;
+            font-family: 'GillSans-Light';
+          }
+        }
+    }
+}
+.form_container{
+    background-color: $light;
+    height: 100%;
+    .MuiBox-root{
+        height: 80%;
+        width:50%;
+        float:left;
+        .MuiPaper-root{
+            .MuiTypography-root{
+                height: 600px;
+                padding-top: 30px;
+                .form_fields{
+
+                    height: 80px;
+                    .lables{
+                        display: flex;
+                        float: left;
+                        height: 100%;
+                        font-family: "GillSans-CondensedBold";
+                        width: 150px;
+                        padding: 10px 15px;
+                        font-size: 1.2em;
+                    }
+                        .MuiFormControl-root{
+                        display: flex;
+                        float: left;
+                        height: 100%;
+                        width: 500px;
+                        }
+                }
+            }
+            .create_request{
+                height: 80px;
+                float: right;
+                padding-right: 20px;
+                .MuiButtonBase-root{
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}
+}
