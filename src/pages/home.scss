@@ -1,0 +1,167 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.home_container{
+    .carousel_container{
+        position: relative;
+        z-index: 3;
+        flex: 1;
+        height: 450px;
+        .banner_carousel {
+            height: 100%;
+            div {
+                height: 100% !important;
+            }
+
+            .css-1f8sh1y {
+                height: 100% !important;
+            }
+
+            .MuiPaper-root {
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0px;
+
+                .banner_img {
+                    img {
+                        width: 100%;
+                        height: calc(100% + 98px);
+                        
+
+                        @media screen and (max-width: 1366px) {
+                            height: calc(100% + 89px);
+                        }
+
+                        @media screen and (max-width: 1279px) {
+                            height: calc(100% + 79px);
+                        }
+
+                        @media screen and (max-width: 1023px) {
+                            height: calc(100% + 70px);
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            height: calc(100% + 42px);
+                        }
+                    }
+                }
+            }
+
+            .css-1abc02a {
+                .MuiButtonBase-root {
+                    opacity: 1;
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid $white;
+                    background-color: $dark_red;
+                    margin: 0px 23px;
+                    
+                    @media screen and (max-width: 1023px) {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    @media screen and (max-width: 575px) {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    .MuiSvgIcon-root {
+                        width: 16px;
+                        height: 16px;
+
+                        @media screen and (max-width: 1023px) {
+                            width: 14px;
+                            height: 14px;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            width: 11px;
+                            height: 11px;
+                        }
+                    }
+                }
+            }
+
+            .css-hn784z {
+                .MuiButtonBase-root {
+                    opacity: 1;
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid $white;
+                    background-color: $dark_red;
+                    margin: 0px 23px;
+
+                    @media screen and (max-width: 1023px) {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    @media screen and (max-width: 575px) {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    .MuiSvgIcon-root {
+                        width: 16px;
+                        height: 16px;
+
+                        @media screen and (max-width: 1023px) {
+                            width: 14px;
+                            height: 14px;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            width: 11px;
+                            height: 11px;
+                        }
+                    }
+                }
+            }
+
+            .css-1m9128y {
+                z-index: 3;
+                position: absolute;
+                bottom: 20px;
+                margin: 0px;
+                height: unset !important;
+
+                @media screen and (max-width: 1023px) {
+                    bottom: 14px;
+                }
+
+                .MuiButtonBase-root {
+                    height: 12px;
+                    width: 12px;
+                    margin: 0px 1px;
+
+                    .MuiSvgIcon-root {
+                        fill: $white;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 12px;
+                    }
+
+                    &.css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
+                        .MuiSvgIcon-root {
+                            fill: $dark_red;
+                        }
+                    }
+                }
+            }
+        }
+        .carousel_overlay{
+            margin-left: 0;
+            margin-top: 0;
+            position: absolute;
+            top: 0;
+            z-index: 5;
+            left: 50;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: rgba(217, 23, 23, 0.3);
+            pointer-events: none;
+        }
+    }
+}

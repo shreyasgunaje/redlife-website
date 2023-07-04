@@ -38,8 +38,8 @@ const City = [
       label: 'Udupi',
     },
     {
-      value: 'Manglore',
-      label: 'Manglore',
+      value: 'Mangalore',
+      label: 'Mangalore',
     },
     {
       value: 'Hassan',

@@ -36,11 +36,12 @@
                     }
                 }
                 &.Mui-selected{
-                    background-color: $white;
+                    // background-color: $white;
                     .MuiListItemText-root{
                         .MuiTypography-root{
-                            color: $red;
+                            color: $white;
                             font-family: GillSans-Medium;
+                            text-decoration: underline;
                         }
                     }
                 }
