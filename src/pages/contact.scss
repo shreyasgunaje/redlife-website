@@ -1,0 +1,84 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.message_container{
+    background-color: $light;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+.left_container{
+    display: flex;
+   width: 50%;
+ }
+.right_container{
+    display: flex;
+    width: 50%;
+    float: left;
+    .MuiBox-root {
+        height: 60%;
+        width: 100%;
+
+        .MuiPaper-root {
+            width: 100%;
+
+            .MuiTypography-root {
+                height: 500px;
+                padding-top: 30px;
+
+                .form_head {
+                    height: 120px;
+
+                    .text_head {
+                        height: 50%;
+                        font-size: 1.8em;
+                        text-align: center;
+                        font-family: 'GillSans';
+                    }
+
+                    .text_content {
+                        height: 50%;
+                        font-size: 1.2em;
+                        text-align: center;
+                        font-family: 'GillSans';
+                        .MuiTypography-root{
+                            color:$light_red;
+                            text-decoration: none;
+                            }
+                    }
+                }
+
+                .form_fields {
+                    height: 80px;
+
+                    .lables {
+                        display: flex;
+                        float: left;
+                        height: 100%;
+                        font-family: "GillSans-CondensedBold";
+                        width: 150px;
+                        padding: 10px 15px;
+                        font-size: 1.2em;
+                    }
+
+                    .MuiFormControl-root {
+                        display: flex;
+                        float: left;
+                        height: 100%;
+                        width: 500px;
+                    }
+                }
+            }
+
+            .create_request {
+                height: 80px;
+                float: right;
+                padding-right: 20px;
+                justify-content: center;
+                .MuiButtonBase-root {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}
+}
