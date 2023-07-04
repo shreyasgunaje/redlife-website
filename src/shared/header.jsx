@@ -142,14 +142,14 @@ function Header() {
 				>
 					<ListItemText primary="FIND A DONOR"/>
 				</ListItemButton>
-	 			<ListItemButton
+	 			{/* <ListItemButton
 					selected={location.pathname==='/organize-a-camp'}
 					onClick={(e)=>{
 						navigate('/organize-a-camp');
 					}}	
 				>
 	 				<ListItemText primary="ORGANIZE A CAMP"/>
-	 			</ListItemButton>
+	 			</ListItemButton> */}
 				 <ListItemButton
 					selected={location.pathname==='/join-us'}
 					onClick={(e)=>{
@@ -174,6 +174,14 @@ function Header() {
 				>
 					<ListItemText primary="CONTACT US"/>
 				</ListItemButton>
+				<ListItemButton
+					selected={location.pathname==='/register-now'}
+					onClick={(e)=>{
+						navigate('/register-now');
+					}}	
+				>
+	 				<ListItemText primary="REGISTER NOW"/>
+	 			</ListItemButton>
 			</List>
 			<div className='right_container'>
 				<Button

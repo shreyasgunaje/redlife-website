@@ -4,7 +4,6 @@
 .footer_container{
     background-color: $light_grey;
     .MuiBox-root{
-        display: flex;
         .footer_divider{
             color: $grey;
             margin: 1px 15px;
@@ -35,6 +34,86 @@
                 }
             }
             
+        }
+        .bottom_container{
+            display: flex;
+            justify-content: space-evenly;
+            .list_container{
+                margin: 20px 40px;
+               
+                .list_title{
+                    font-family: GillSans-Medium;
+                    font-size: 0.9em;
+                    color: $dark_grey;
+                }
+                .MuiList-root{
+                    .MuiListItem-root{
+                        padding: 1px;
+                        flex-grow: unset;
+                         -webkit-flex-grow: unset;
+                        .MuiListItemText-root{
+                            margin: 0;
+                            -webkit-flex: unset;
+                            flex: unset;
+                            .MuiTypography-root{
+                                font-family: GillSans;
+                                font-size: 0.9em;
+                                color: $grey;
+                                &:hover{
+                                    color: $black;
+                                }
+                            }
+                            &.active{
+                                .MuiTypography-root{
+                                    font-family: GillSans-Medium;
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .copyright_container{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px ;
+            .copy_text{
+                font-family: GillSans;
+                font-size: 0.9em;
+                color: $grey;
+                margin-left: 40px;
+            }
+            .MuiList-root{
+                display: flex;
+                margin-right: 40px;
+                padding: 0%;
+                width: 250px;
+                .MuiListItem-root{
+                    padding: 1px;
+                    flex-grow: unset;
+                     -webkit-flex-grow: unset;
+                    .MuiListItemText-root{
+                        margin: 0;
+                        -webkit-flex: unset;
+                        flex: unset;
+                        .MuiTypography-root{
+                            font-family: GillSans;
+                            font-size: 0.8em;
+                            color: $grey;
+                            &:hover{
+                                color: $black;
+                            }
+                        }
+                        &.active{
+                            .MuiTypography-root{
+                                font-family: GillSans-Medium;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
