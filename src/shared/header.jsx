@@ -12,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Typography } from '@mui/material';
 import header_icon from '../assets/images/icon.png';
 import {useNavigate, useLocation} from 'react-router-dom';
+import { NavToggleIcon } from './icon';
 
 function LogInUserIcon(props) {
 	return (
@@ -120,19 +121,17 @@ function NavMenuArrowIcon(props) {
 
 function Header() {
 	
+	const [openDrawer, setOpenDrawer] = React.useState(false);
+
 	const handleRefreshToHomePage = () => {
 		window.location.href = '/';
 	}
 
 	const navigate = useNavigate();
 	const location = useLocation();
-  return (
-	<div className='header_container'>
-		<Box>
-			<div className='title_container'>
-				<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
-				<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
-			</div>
+
+	const Navbar = () => {
+		return(
 			<List component="nav" aria-label='main mailbox folders'>
 				<ListItemButton
 					selected={location.pathname==='/find-a-donor'}
@@ -183,6 +182,29 @@ function Header() {
 	 				<ListItemText primary="REGISTER NOW"/>
 	 			</ListItemButton> */}
 			</List>
+		)
+	}
+
+	const MobileDrawer = () => {
+		return (
+			<div
+				className={
+					'mobile_drawer_container ' + (openDrawer ? 'open_drawer' : '')
+				}
+			>
+				<Navbar />
+			</div>
+		);
+	};
+
+  return (
+	<div className='header_container'>
+		<Box>
+			<div className='title_container'>
+				<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
+				<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
+			</div>
+			<Navbar/>
 			<div className='right_container'>
 				<Button
 					className="login_btn"
@@ -195,9 +217,16 @@ function Header() {
 				>
 					LOGIN
 				</Button>
+				<IconButton
+					aria-label="Menu"
+					className="navbar_toggler_btn"
+					onClick={() => setOpenDrawer(!openDrawer)}
+				>
+					<NavToggleIcon />
+				</IconButton>
 			</div>
-			
 		</Box>
+		<MobileDrawer/>
 	</div>
   )
 }

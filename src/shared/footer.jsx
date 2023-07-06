@@ -36,7 +36,7 @@ function Footer() {
                   <img src={footer_icon} alt='icon' className='footer_icon' onClick={handleRefreshToHomePage}/>
 				          <Typography className='footer_title' onClick={handleRefreshToHomePage}>red<span>Life</span></Typography>
                 </div>
-                <Stack className='social_stack' direction="row" alignItems="center" spacing={4}>
+                <Stack className='social_stack' direction="row" alignItems="center">
                   <Link href="https://www.instagram.com/" target='_blank'>
                     <InstagramIcon fontSize="medium" sx={{ color: "#7a0303" }} />
                   </Link>
@@ -92,7 +92,7 @@ function Footer() {
                 </ListItem>               
               </List>
             </div>
-            <div className='list_container'>
+            <div className='list_container2'>
               <Typography className='list_title'>FIND A DONOR</Typography>
               <List component="nav" aria-label="main mailbox folders">
                 <ListItem onClick={(e) => navigate('/find-a-donor')}>

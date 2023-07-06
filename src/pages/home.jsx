@@ -53,7 +53,9 @@ function Item(props) {
         </Carousel>
         <div className="carousel_overlay"></div>
       </div>
+      <div className=''>
         
+      </div>
     </div>
   )
 }
