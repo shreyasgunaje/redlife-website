@@ -4,7 +4,9 @@ import car_img1 from '../assets/images/car-img1.jpg';
 import car_img2 from '../assets/images/car-img2.jpg';
 import car_img3 from '../assets/images/car-img3.jpg';
 import car_img4 from '../assets/images/car-img4.jpg';
+import car_img5 from '../assets/images/car-img5.jpg';
 import { Paper } from '@mui/material';
+import { CarouselNextIcon, CarouselPrevIcon } from '../shared/icon';
 import './home.scss'
 
 function Home() {
@@ -20,6 +22,9 @@ function Home() {
     },
     {
       bannerImg: car_img4,
+    },
+    {
+      bannerImg: car_img5,
     }
 ];
 function Item(props) {
@@ -36,8 +41,8 @@ function Item(props) {
       <div className='carousel_container'>
         <Carousel
           className="banner_carousel"
-          // NextIcon={<CarouselNextIcon />}
-          // PrevIcon={<CarouselPrevIcon />}
+          NextIcon={<CarouselNextIcon />}
+          PrevIcon={<CarouselPrevIcon />}
           // navButtonsAlwaysInvisible={true}
           navButtonsAlwaysVisible={false}
           autoPlay={true}

@@ -39,6 +39,10 @@
                         //     width: 27px;
                         //     max-height: 27px;
                         // }
+                        @media screen and (max-width: 300px) {
+                            width: 30px;
+                            max-height: 30px;
+                        }
                     }
                     .footer_title{
                         color: $red_2;
@@ -53,6 +57,9 @@
                         // @media screen and (max-width: 576px) {
                         //     font-size: 1.4em;
                         // }
+                        @media screen and (max-width: 300px) {
+                            font-size: 1.4em;
+                        }
                     }
                 }
                 .social_stack{
