@@ -18,13 +18,16 @@
             }
             @media screen and (max-width: 991px) {
                 margin-left: 30px;
+                padding: 1.5%;
             }
-            // @media screen and (max-width: 768px) {
-            //     margin-left: 15px;
-            // }
-            // @media screen and (max-width: 576px) {
-            //     margin-left: 10px;
-            // }
+            @media screen and (max-width: 768px) {
+                margin-left: 20px;
+                padding: 2%;
+            }
+            @media screen and (max-width: 576px) {
+                margin-left: 10px;
+                padding: 2.5%;
+            }
             .header_icon{
                 width: 35px;
                 max-height: 35px;
@@ -96,6 +99,9 @@
             @media screen and (max-width: 991px) {
                 margin-right: 40px;
             }
+            @media screen and (max-width: 576px) {
+                margin-right: 20px;
+            }
             .login_btn{
                 background-color: $white;
                 width: 130px;
@@ -113,9 +119,7 @@
             }
             .navbar_toggler_btn {
                 display: none;
-                &:hover {
-                    background-color: $white;
-                }
+                background-color: $red;
                 @media screen and (max-width: 991px) {
                     display: inline-flex;
                     border: 1px solid $white;
@@ -124,7 +128,13 @@
                     width: 40px;
                     margin-left: 18px;
                     .MuiSvgIcon-root {
-                        color: $white;
+                        fill: $white;
+                    }
+                }
+                &:hover {
+                    background-color: $white;
+                    .MuiSvgIcon-root {
+                        fill: $red;
                     }
                 }
             }
@@ -154,6 +164,7 @@
             }
             @media screen and (max-width: 576px) {
                 width: 100%;
+                position: relative;
             }
             .MuiList-root{
                 padding: 0;

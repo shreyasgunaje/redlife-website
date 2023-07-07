@@ -23,7 +23,7 @@
                         margin-left: 30px;
                     }
                     @media screen and (max-width: 768px) {
-                        margin-left: 15px;
+                        margin-left: 20px;
                     }
                     @media screen and (max-width: 576px) {
                         margin-left: 10px;
@@ -134,7 +134,7 @@
                             }
                             &.active{
                                 .MuiTypography-root{
-                                    font-family: GillSans-Medium;
+                                    font-family: GillSans-Bold;
                                     color: $black;
                                 }
                             }
@@ -180,7 +180,7 @@
                             }
                             &.active{
                                 .MuiTypography-root{
-                                    font-family: GillSans-Medium;
+                                    font-family: GillSans-Bold;
                                     color: $black;
                                 }
                             }
