@@ -123,10 +123,27 @@
                 font-family: GillSans-Medium;
                 color: $red;
                 text-transform: capitalize;
+                text-decoration: none;
+                @media screen and (max-width:576px) {
+                    display: contents;
+                    span{
+                        color: $white;
+                        text-decoration: underline;
+                    }
+                }
             }
             .navbar_toggler_btn {
                 display: none;
                 background-color: $red;
+                .MuiSvgIcon-root {
+                    fill: $white;
+                }
+                &.drawer_open {
+                    background-color: $white;
+                    .MuiSvgIcon-root {
+                        fill: $red;
+                    }
+                }
                 @media screen and (max-width: 991px) {
                     display: inline-flex;
                     border: 1px solid $white;
@@ -134,15 +151,6 @@
                     height: 40px;
                     width: 40px;
                     margin-left: 18px;
-                    .MuiSvgIcon-root {
-                        fill: $white;
-                    }
-                }
-                &:hover {
-                    background-color: $white;
-                    .MuiSvgIcon-root {
-                        fill: $red;
-                    }
                 }
             }
         }

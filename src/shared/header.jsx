@@ -215,11 +215,13 @@ function Header() {
 						window.open('');
 					}}
 				>
-					LOGIN
+					<span>LOGIN</span>
 				</Button>
 				<IconButton
 					aria-label="Menu"
-					className="navbar_toggler_btn"
+					className={
+						'navbar_toggler_btn' + (openDrawer ? ' drawer_open' : '')
+					}
 					onClick={() => setOpenDrawer(!openDrawer)}
 				>
 					<NavToggleIcon />
