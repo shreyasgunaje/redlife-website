@@ -1,84 +1,80 @@
 @import '../variable.scss';
 @import '../assets/fonts/fonts.scss';
 
-.message_container{
+.message_container {
     background-color: $light;
-    height: 100vh;
     width: 100%;
     padding: 20px;
-.left_container{
     display: flex;
-   width: 50%;
- }
-.right_container{
-    display: flex;
-    width: 50%;
-    float: left;
-    .MuiBox-root {
-        height: 60%;
-        width: 100%;
-
-        .MuiPaper-root {
+    .right_container {
+        display: flex;
+        width: 50%;
+        float: left;
+        @media screen and (max-width: 575px) {
+            display: block;
+            width: 100%;
+        }
+        .MuiBox-root {
             width: 100%;
 
-            .MuiTypography-root {
-                height: 500px;
-                padding-top: 30px;
+            .MuiPaper-root {
+                width: 100%;
 
-                .form_head {
-                    height: 120px;
-
-                    .text_head {
-                        height: 50%;
-                        font-size: 1.8em;
-                        text-align: center;
-                        font-family: 'GillSans';
-                    }
-
-                    .text_content {
-                        height: 50%;
-                        font-size: 1.2em;
-                        text-align: center;
-                        font-family: 'GillSans';
-                        .MuiTypography-root{
-                            color:$light_red;
-                            text-decoration: none;
+                .MuiTypography-root {
+                    .form_head {
+                        .text_head {
+                            font-size: 1.8em;
+                            text-align: center;
+                            font-family: 'GillSans';
+                            @media screen and (max-width: 575px) {
+                               font-size: 1.5em;
+                               padding: 30px;
                             }
+                        }
+                        .text_content {
+                            font-size: 1.2em;
+                            text-align: center;
+                            font-family: 'GillSans';
+                            @media screen and (max-width: 575px) {
+                                font-size: 1.0em;
+                                padding-bottom: 20px;
+                             }
+                            .MuiTypography-root {
+                                color: $light_red;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .form_fields {
+                        height: 80px;
+                        .lables {
+                            display: flex;
+                            float: left;
+                            font-family: "GillSans-CondensedBold";
+                            width: 25%;
+                            padding: 10px 15px;
+                            font-size: 1.2em;
+                        }
+
+                        .MuiFormControl-root {
+                            display: flex;
+                            float: left;
+                            width: 70%;
+                        }
                     }
                 }
 
-                .form_fields {
+                .create_request {
                     height: 80px;
+                    float: right;
+                    padding-right: 20px;
+                    justify-content: center;
 
-                    .lables {
-                        display: flex;
-                        float: left;
-                        height: 100%;
-                        font-family: "GillSans-CondensedBold";
-                        width: 150px;
-                        padding: 10px 15px;
-                        font-size: 1.2em;
+                    .MuiButtonBase-root {
+                        background-color: $red;
                     }
-
-                    .MuiFormControl-root {
-                        display: flex;
-                        float: left;
-                        height: 100%;
-                        width: 500px;
-                    }
-                }
-            }
-
-            .create_request {
-                height: 80px;
-                float: right;
-                padding-right: 20px;
-                justify-content: center;
-                .MuiButtonBase-root {
-                    background-color: $red;
                 }
             }
         }
     }
-}
 }

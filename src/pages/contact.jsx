@@ -1,7 +1,7 @@
 import React from 'react';
 import './contact.scss';
 import { Link, Paper } from '@mui/material';
-import { Box, MenuItem } from "@mui/material";
+import { Box} from "@mui/material";
 import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 
@@ -20,9 +20,7 @@ const handleSubmit = (event) => {
 };
 return (
     <div className="message_container">
-        <div className='left_container'>
-
-        </div>
+        
         <div className='right_container'>
         <Box
                     sx={{
@@ -34,7 +32,7 @@ return (
                         },
                     }}
                 >
-                    <Paper elevation={24} >
+                    <Paper elevation={2} >
 
 
                         <form id="form" onSubmit={handleSubmit}>
