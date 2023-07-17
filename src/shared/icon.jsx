@@ -26,3 +26,20 @@ export function NavToggleIcon(props) {
         </SvgIcon>
     );
 }
+
+export function LogArrowIcon(props) {
+	return (
+		<SvgIcon {...props} viewBox="0 0 8.828 14.827">
+			<path
+				id="Path_29214"
+				data-name="Path 29214"
+				d="M3847.184,1022.835l6,6-6,6"
+				transform="translate(-3845.77 -1021.421)"
+				fill="none"
+				stroke="#7a0303"
+				strokeLinecap="round"
+				strokeWidth="2"
+			/>
+		</SvgIcon>
+	);
+}

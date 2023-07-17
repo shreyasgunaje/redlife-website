@@ -82,6 +82,9 @@
                         font-size: 0.9em;
                         font-family: GillSans;
                         text-align: center;
+                        &:hover{
+                            font-weight: bolder;
+                        }
                     }
                 }
                 &.Mui-selected{
@@ -124,7 +127,12 @@
                 color: $red;
                 text-transform: capitalize;
                 text-decoration: none;
-                @media screen and (max-width:576px) {
+                @media screen and (min-width:992px) {
+                    &:hover{
+                        font-weight: bolder;
+                    }
+                }
+                @media screen and (max-width:768px) {
                     display: contents;
                     span{
                         color: $white;
