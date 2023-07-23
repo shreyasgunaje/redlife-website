@@ -3,44 +3,97 @@
 
 .header_container{
     background-color: $red;
+    position: sticky;
+    top: 0;
+    z-index: 6;
     .MuiBox-root{
         display: flex;
+        justify-content: space-between;
         .title_container{
             display: flex;
             padding: 1%;
+            margin-left: 60px;
+            @media screen and (max-width: 1200px) {
+                margin-left: 25px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-left: 30px;
+                padding: 1.5%;
+            }
+            @media screen and (max-width: 768px) {
+                margin-left: 20px;
+                padding: 2%;
+            }
+            @media screen and (max-width: 576px) {
+                margin-left: 10px;
+                padding: 2.5%;
+            }
             .header_icon{
                 width: 35px;
                 max-height: 35px;
-                margin-left: 20px;
+                // @media screen and (max-width: 768px) {
+                //     width: 32px;
+                //     max-height: 32px;
+                // }
+                // @media screen and (max-width: 576px) {
+                //     width: 27px;
+                //     max-height: 27px;
+                // }
+                @media screen and (max-width: 300px) {
+                    width: 30px;
+                    max-height: 30px;
+                }
             }
             .header_title{
                 color: $white;
                 font-size: 1.6em;
                 font-family: GillSans-BoldItalic;
+                // @media screen and (max-width: 768px) {
+                //     font-size: 1.5em;
+                // }
+                // @media screen and (max-width: 576px) {
+                //     font-size: 1.4em;
+                // }
+                @media screen and (max-width: 300px) {
+                    font-size: 1.4em;
+                }
             }
         }
         .MuiList-root{
             display: flex;
-            margin-left: 100px;
+            // margin-left: 100px;
             padding: 0;
+            @media screen and (max-width: 991px){
+                display: none;
+            }
             .MuiButtonBase-root{
                 padding: 8px 24px;
                 flex: none;
-                min-width: 135px;
+                min-width: 130px;
+                @media screen and (max-width: 1200px) {
+                    min-width: 100px;
+                }
+                @media screen and (max-width: 991px) {
+                    min-width: 70px;
+                }
                 .MuiListItemText-root{
                     .MuiTypography-root{
                         color: $white;
                         font-size: 0.9em;
                         font-family: GillSans;
                         text-align: center;
+                        &:hover{
+                            font-weight: bolder;
+                        }
                     }
                 }
                 &.Mui-selected{
-                    background-color: $white;
+                    // background-color: $white;
                     .MuiListItemText-root{
                         .MuiTypography-root{
-                            color: $red;
+                            color: $white;
                             font-family: GillSans-Medium;
+                            text-decoration: underline;
                         }
                     }
                 }
@@ -49,7 +102,16 @@
         .right_container{
             display: flex;
             align-items: center;
-            margin-left: 120px;
+            margin-right: 60px;
+            @media screen and (max-width: 1200px) {
+                margin-right: 25px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-right: 40px;
+            }
+            @media screen and (max-width: 576px) {
+                margin-right: 20px;
+            }
             .login_btn{
                 background-color: $white;
                 width: 130px;
@@ -64,8 +126,97 @@
                 font-family: GillSans-Medium;
                 color: $red;
                 text-transform: capitalize;
+                text-decoration: none;
+                @media screen and (min-width:992px) {
+                    &:hover{
+                        font-weight: bolder;
+                    }
+                }
+                @media screen and (max-width:768px) {
+                    display: contents;
+                    span{
+                        color: $white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .navbar_toggler_btn {
+                display: none;
+                background-color: $red;
+                .MuiSvgIcon-root {
+                    fill: $white;
+                }
+                &.drawer_open {
+                    background-color: $white;
+                    .MuiSvgIcon-root {
+                        fill: $red;
+                    }
+                }
+                @media screen and (max-width: 991px) {
+                    display: inline-flex;
+                    border: 1px solid $white;
+                    border-radius: 0px;
+                    height: 40px;
+                    width: 40px;
+                    margin-left: 18px;
+                }
+            }
+        }
+    }
+    .mobile_drawer_container{
+        max-height: 0px;
+        display: none;
+        &.open_drawer{
+            display: block;
+            position: fixed;
+            top: initial;
+            right: 0px;
+            width: 30%;
+            // align-items: end;
+            max-height: calc(100% - 70px);
+            overflow: auto;
+            transition: height .5s;
+            z-index: 99;
+            box-shadow: 0px 2px 7px 0px rgb(122, 3, 3, 0.35);
+            background-color: $red;
+            @media screen and (max-width: 991px) {
+                width: 30%;
+            }
+            @media screen and (max-width: 768px) {
+                width: 50%;
+            }
+            @media screen and (max-width: 576px) {
+                width: 100%;
+                position: relative;
+            }
+            .MuiList-root{
+                padding: 0;
+                .MuiButtonBase-root{
+                    padding: 8px 24px;
+                    flex: none;
+                    min-width: 130px;
+                    .MuiListItemText-root{
+                        .MuiTypography-root{
+                            color: $white;
+                            font-size: 0.9em;
+                            font-family: GillSans;
+                            text-align: center;
+                        }
+                    }
+                    &.Mui-selected{
+                        background-color: $white;
+                        .MuiListItemText-root{
+                            .MuiTypography-root{
+                                color: $red;
+                                font-family: GillSans-Medium;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
 }
+
+

@@ -9,11 +9,10 @@ import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Menu from '@mui/material/Menu';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import {AppBar, Typography,Toolbar} from '@mui/material';
+import { Typography } from '@mui/material';
 import header_icon from '../assets/images/icon.png';
 import {useNavigate, useLocation} from 'react-router-dom';
+import { NavToggleIcon, LogArrowIcon } from './icon';
 
 function LogInUserIcon(props) {
 	return (
@@ -42,22 +41,7 @@ function LogInUserIcon(props) {
 	);
 }
 
-function LogArrowIcon(props) {
-	return (
-		<SvgIcon {...props} viewBox="0 0 8.828 14.827">
-			<path
-				id="Path_29214"
-				data-name="Path 29214"
-				d="M3847.184,1022.835l6,6-6,6"
-				transform="translate(-3845.77 -1021.421)"
-				fill="none"
-				stroke="#7a0303"
-				strokeLinecap="round"
-				strokeWidth="2"
-			/>
-		</SvgIcon>
-	);
-}
+
 
 function SelectArrowIcon(props) {
 	return (
@@ -122,49 +106,17 @@ function NavMenuArrowIcon(props) {
 
 function Header() {
 	
+	const [openDrawer, setOpenDrawer] = React.useState(false);
+
 	const handleRefreshToHomePage = () => {
 		window.location.href = '/';
 	}
 
 	const navigate = useNavigate();
 	const location = useLocation();
-  return (
-    // <div >
-    //     <AppBar>
-    //         <Toolbar className='header_container'>
-	// 			<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
-    //     		<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
-	// 			{/* <Box>
-	// 				<List component="nav" aria-label='main mailbox folders'>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="FIND A DONOR"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="ORGANIZE A CAMP"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="ABOUT US"/>
-	// 					</ListItemButton>
-	// 					<ListItemButton>
-	// 						<ListItemText primary="CONTACT US"/>
-	// 					</ListItemButton>
-	// 				</List>
-	// 			</Box> */}
-	// 			{/* <Link className='header_navitem'>FIND A DONOR</Link>
-	// 			<Link className='header_navitem'>ORGANIZE A CAMP</Link>
-	// 			<Link className='header_navitem'>ABOUT US</Link>
-	// 			<Link className='header_navitem'>CONTACT US</Link>
-	// 			<Button className='header_navbutton'>LOG IN</Button>
-	// 			<Button className='header_navbutton'>SIGN UP</Button> */}
-    //         </Toolbar>
-    //     </AppBar>
-    // </div>
-	<div className='header_container'>
-		<Box>
-			<div className='title_container'>
-				<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
-				<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
-			</div>
+
+	const Navbar = () => {
+		return(
 			<List component="nav" aria-label='main mailbox folders'>
 				<ListItemButton
 					selected={location.pathname==='/find-a-donor'}
@@ -206,7 +158,38 @@ function Header() {
 				>
 					<ListItemText primary="CONTACT US"/>
 				</ListItemButton>
+				{/* <ListItemButton
+					selected={location.pathname==='/register-now'}
+					onClick={(e)=>{
+						navigate('/register-now');
+					}}	
+				>
+	 				<ListItemText primary="REGISTER NOW"/>
+	 			</ListItemButton> */}
 			</List>
+		)
+	}
+
+	const MobileDrawer = () => {
+		return (
+			<div
+				className={
+					'mobile_drawer_container ' + (openDrawer ? 'open_drawer' : '')
+				}
+			>
+				<Navbar />
+			</div>
+		);
+	};
+
+  return (
+	<div className='header_container'>
+		<Box>
+			<div className='title_container'>
+				<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
+				<Typography className='header_title' onClick={handleRefreshToHomePage}>redLife</Typography>
+			</div>
+			<Navbar/>
 			<div className='right_container'>
 				<Button
 					className="login_btn"
@@ -214,14 +197,23 @@ function Header() {
 					startIcon={<LogInUserIcon />}
 					endIcon={<LogArrowIcon />}
 					onClick={(e) => {
-						window.open('https://soilhealth.dac.gov.in/admin/');
+						window.open('');
 					}}
 				>
-					LOGIN
+					<span>LOGIN</span>
 				</Button>
+				<IconButton
+					aria-label="Menu"
+					className={
+						'navbar_toggler_btn' + (openDrawer ? ' drawer_open' : '')
+					}
+					onClick={() => setOpenDrawer(!openDrawer)}
+				>
+					<NavToggleIcon />
+				</IconButton>
 			</div>
-			
 		</Box>
+		<MobileDrawer/>
 	</div>
   )
 }

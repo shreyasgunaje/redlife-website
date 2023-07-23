@@ -1,0 +1,415 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.container1 {
+    width: 100%;
+
+    .sub1_container {
+        display: flex;
+        width: 100%;
+        background-color: $light;
+
+        .carousel_container {
+            position: relative;
+            z-index: 3;
+            flex: 1;
+            height: 600px;
+
+            @media screen and (max-width: 1440px) {
+                height: 500px;
+            }
+
+            @media screen and (max-width: 1200px) {
+                height: 450px;
+            }
+
+            @media screen and (max-width: 991px) {
+                height: 430px;
+            }
+
+            @media screen and (max-width: 768px) {
+                height: 350px;
+            }
+
+            @media screen and (max-width: 576px) {
+                height: 320px;
+            }
+
+            .banner_carousel {
+                height: 100%;
+
+                div {
+                    height: 100% !important;
+                }
+
+                .css-1f8sh1y {
+                    height: 100% !important;
+                }
+
+                .MuiPaper-root {
+                    background-color: transparent;
+                    box-shadow: none;
+                    border-radius: 0px;
+
+                    .banner_img {
+                        img {
+                            width: 100%;
+                            height: calc(100% + 98px);
+
+                            @media screen and (max-width: 1366px) {
+                                height: calc(100% + 89px);
+                            }
+
+                            @media screen and (max-width: 1279px) {
+                                height: calc(100% + 79px);
+                            }
+
+                            @media screen and (max-width: 1023px) {
+                                height: calc(100% + 70px);
+                            }
+
+                            @media screen and (max-width: 576px) {
+                                height: calc(100% + 42px);
+                            }
+                        }
+                    }
+                }
+
+                .css-1abc02a {
+                    z-index: 10;
+
+                    .MuiButtonBase-root {
+                        opacity: 1;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid $white;
+                        background-color: $red;
+                        margin: 0px 23px;
+
+                        @media screen and (max-width: 1023px) {
+                            width: 35px;
+                            height: 35px;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            width: 25px;
+                            height: 25px;
+                        }
+
+                        .MuiSvgIcon-root {
+                            width: 15px;
+                            height: 15px;
+
+                            @media screen and (max-width: 1023px) {
+                                width: 13px;
+                                height: 13px;
+                            }
+
+                            @media screen and (max-width: 575px) {
+                                width: 11px;
+                                height: 11px;
+                            }
+                        }
+                    }
+                }
+
+                .css-hn784z {
+                    z-index: 10;
+
+                    .MuiButtonBase-root {
+                        opacity: 1;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid $white;
+                        background-color: $red;
+                        margin: 0px 23px;
+
+                        @media screen and (max-width: 1023px) {
+                            width: 35px;
+                            height: 35px;
+                        }
+
+                        @media screen and (max-width: 575px) {
+                            width: 25px;
+                            height: 25px;
+                        }
+
+                        .MuiSvgIcon-root {
+                            width: 15px;
+                            height: 15px;
+
+                            @media screen and (max-width: 1023px) {
+                                width: 13px;
+                                height: 13px;
+                            }
+
+                            @media screen and (max-width: 575px) {
+                                width: 11px;
+                                height: 11px;
+                            }
+                        }
+                    }
+                }
+
+                .css-1m9128y {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 20px;
+                    margin: 0px;
+                    height: unset !important;
+
+                    @media screen and (max-width: 1023px) {
+                        bottom: 14px;
+                    }
+
+                    .MuiButtonBase-root {
+                        height: 12px;
+                        width: 12px;
+                        margin: 0px 1px;
+
+                        .MuiSvgIcon-root {
+                            fill: $white;
+                            width: 100%;
+                            height: 100%;
+                            font-size: 12px;
+                        }
+
+                        &.css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
+                            .MuiSvgIcon-root {
+                                fill: $red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .carousel_overlay {
+                margin-left: 0;
+                margin-top: 0;
+                position: absolute;
+                top: 0;
+                z-index: 5;
+                left: 50;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                background-color: transparent;
+
+                // pointer-events: none;
+                @media screen and (max-width: 991px) {
+                    display: block;
+                }
+
+                .overlay_carousel {
+                    width: 40%;
+                    margin-left: 100px;
+                    align-self: center;
+
+                    @media screen and (max-width: 1100px) {
+                        width: 50%;
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        width: 60%;
+                        margin-top: 90px;
+                        margin-left: 90px;
+                        height: 45%;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                        margin-top: 60px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        height: 45%;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        width: 70%;
+                        margin-top: 60px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        height: 40%;
+                    }
+
+                    .overlay_text {
+                        .overlay_head {
+                            max-width: 100%;
+
+                            .MuiTypography-root {
+                                font-size: 2.5em;
+                                font-family: GillSans-Medium;
+                                color: $white;
+
+                                @media screen and (max-width: 768px) {
+                                    font-size: 2.0em;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    font-size: 1.4em;
+                                }
+                            }
+                        }
+
+                        .overlay_body {
+                            max-width: 95%;
+
+                            .MuiTypography-root {
+                                font-size: 1.2em;
+                                font-family: GillSans-Light;
+                                color: $white;
+
+                                @media screen and (max-width: 768px) {
+                                    font-size: 1em;
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    font-size: 0.9em;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .register_btn {
+                    background-color: $white;
+                    display: flex;
+                    height: 40px;
+                    padding: 6px 13px;
+                    align-items: center;
+                    align-self: center;
+                    justify-content: center;
+                    box-shadow: none;
+                    border-radius: 0px;
+                    font-size: 0.9em;
+                    font-family: GillSans-Medium;
+                    color: $red;
+
+                    a{
+                        text-decoration: none;
+                        color: $red;
+                    }
+
+                    @media screen and (max-width: 991px) {
+                        margin-left: 120px;
+                        margin-top: 0px;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 5px;
+                    }
+
+                    @media screen and (max-width: 576px) {
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 10px;
+                        padding: 2px 10px;
+                        height: 35px;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+
+    .sub2_container {
+        display: flex;
+        width: 100%;
+        background-color: $red;
+        @media screen and (max-width: 575px) {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+        .right_container {
+            width: 50%;
+            @media screen and (max-width: 1366px) {
+                    
+            }
+
+            @media screen and (max-width: 1279px) {
+                
+            }
+
+            @media screen and (max-width: 1023px) {
+                display: block;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 991px) {
+                display: block;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 575px) {
+                display: block;
+                width: 100%;
+            }
+
+            .MuiBox-root {
+                width: 100%;
+                float: right;
+                padding: 20px 10px;
+
+                .MuiPaper-root {
+
+                    .MuiTypography-root {
+                        padding-top: 30px;
+
+                        .form_head {
+                            height: 120px;
+
+                            .text_head {
+                                height: 50%;
+                                font-size: 1.8em;
+                                text-align: center;
+                                font-family: 'GillSans';
+                            }
+
+                            .text_content {
+                                height: 50%;
+                                font-size: 1.2em;
+                                text-align: center;
+                                font-family: 'GillSans';
+                            }
+                        }
+
+                        .form_fields {
+                            height: 80px;
+
+                            .lables {
+                                    display: flex;
+                                    float: left;
+                                    height: 100%;
+                                    font-family: "GillSans-CondensedBold";
+                                    width: 25%;
+                                    padding: 10px 15px;
+                                    font-size: 1.2em;
+                                }
+
+                                .MuiFormControl-root {
+                                    display: flex;
+                                    float: left;
+                                    height: 100%;
+                                    width: 70%;
+                                }
+                        }
+                    }
+
+                    .create_request {
+                        height: 80px;
+                        float: right;
+                        padding-right: 20px;
+
+                        .MuiButtonBase-root {
+                            background-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
