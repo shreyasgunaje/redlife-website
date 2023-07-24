@@ -2,13 +2,6 @@
 @import '../assets/fonts/fonts.scss';
 
 .container1 {
-    width: 100%;
-
-    .sub1_container {
-        display: flex;
-        width: 100%;
-        background-color: $light;
-
         .carousel_container {
             position: relative;
             z-index: 3;
@@ -286,7 +279,7 @@
                     font-family: GillSans-Medium;
                     color: $red;
 
-                    a{
+                    a {
                         text-decoration: none;
                         color: $red;
                     }
@@ -313,34 +306,123 @@
                 }
             }
         }
+    .info1_container{
+        display: flex;
+        flex-direction: row;
+        background-color: $light;
+        padding: 20px 20px;
+        @media screen and (max-width: 991px){
+            flex-direction: column;
+        }
+        .info1_image{
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            padding: 20px;
+            @media screen and (max-width: 991px){
+                width: 100%;
+            }
+            .i_img{
+                height: 300px;
+                filter: grayscale(100%);
+                @media screen and (max-width: 991px){
+                    width: 350px;;
+                }
+                
+            }
+            :hover{
+                filter: none;
+                transition: 1s;
+            }
+        }
+        .info1_text{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            width: 50%;
+            color: black;
+            font-size: 1.2em;
+            font-family: 'GillSans';
+            @media screen and (max-width: 991px){
+                width: 100%;
+            }
+        }
     }
-
-    .sub2_container {
+    .info2_container{
+        display: flex;
+        background-color: $light;
+        padding: 20px 20px;
+        flex-direction: row-reverse;
+        @media screen and (max-width: 991px){
+            flex-direction: column;
+        }
+        
+        .info2_image{
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            padding: 20px;
+            @media screen and (max-width: 991px){
+                width: 100%;
+            }
+            .i_img{
+                height: 300px;
+                filter: grayscale(100%);
+                @media screen and (max-width: 991px){
+                    width: 350px;
+                }
+            }
+            :hover{
+                filter: none;
+                transition: 1s;
+            }
+        }
+        .info2_text{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: center;
+            width: 50%;
+            color: black;
+            font-size: 1.2em;
+            font-family: 'GillSans';
+            @media screen and (max-width: 991px){
+                width: 100%;
+            }
+        }
+    }
+    .form_container {
         display: flex;
         width: 100%;
         background-color: $red;
-        @media screen and (max-width: 575px) {
+        flex-direction: row;
+        @media screen and (max-width: 991px) {
             display: flex;
             width: 100%;
+            align-items: center;
             flex-direction: column;
         }
-        .right_container {
+        
+        .left_container {
+            display: flex;
             width: 50%;
             @media screen and (max-width: 1366px) {
-                    
+                display: flex;
+                width: 50%;
             }
 
             @media screen and (max-width: 1279px) {
-                
+                display: flex;
+                width: 50%;
             }
 
             @media screen and (max-width: 1023px) {
-                display: block;
-                width: 100%;
+                display: flex;
+                width: 50%;
             }
-
             @media screen and (max-width: 991px) {
-                display: block;
+                display: flex;
                 width: 100%;
             }
 
@@ -350,12 +432,115 @@
             }
 
             .MuiBox-root {
+                display: flex;
                 width: 100%;
                 float: right;
                 padding: 20px 10px;
+                justify-content: center;
+
+                @media screen and (max-width: 1440px) {
+                    height: 97%;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    height: 97%;
+                }
+
+                @media screen and (max-width: 991px) {
+                    height: 500px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    height: 450px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    height: 420px;
+                }
+
+                .banner_carousel {
+                    height: 100%;
+
+                    div {
+                        height: 100% !important;
+                    }
+
+                    .css-1f8sh1y {
+                        height: 100% !important;
+                    }
+
+                    .MuiPaper-root {
+                        background-color: transparent;
+                        box-shadow: none;
+                        border-radius: 0px;
+
+                        .banner1_img {
+                            img {
+                                width: 100%;
+                                height: calc(100% + 98px);
+
+                                @media screen and (max-width: 1366px) {
+                                    height: calc(100% + 89px);
+                                }
+
+                                @media screen and (max-width: 1279px) {
+                                    height: calc(100% + 79px);
+                                }
+
+                                @media screen and (max-width: 1023px) {
+                                    height: calc(100% + 70px);
+                                }
+
+                                @media screen and (max-width: 576px) {
+                                    height: calc(100% + 42px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right_container {
+            display: flex;
+            width: 50%;
+            float: right;
+
+            @media screen and (max-width: 1366px) {
+                display: flex;
+                width: 50%;
+            }
+
+            @media screen and (max-width: 1279px) {
+                display: flex;
+                width: 50%;
+            }
+
+            @media screen and (max-width: 1023px) {
+                display: flex;
+                width: 50%;
+            }
+
+            @media screen and (max-width: 991px) {
+                display: flex;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 575px) {
+                display: block;
+                width: 100%;
+            }
+
+            .MuiBox-root {
+                height: 100%;
+                width: 100%;
+                float: right;
+                display: flex;
+                justify-content: center;
+                padding: 20px 10px;
 
                 .MuiPaper-root {
-
+                    
                     .MuiTypography-root {
                         padding-top: 30px;
 
@@ -381,21 +566,21 @@
                             height: 80px;
 
                             .lables {
-                                    display: flex;
-                                    float: left;
-                                    height: 100%;
-                                    font-family: "GillSans-CondensedBold";
-                                    width: 25%;
-                                    padding: 10px 15px;
-                                    font-size: 1.2em;
-                                }
+                                display: flex;
+                                float: left;
+                                height: 100%;
+                                font-family: "GillSans-CondensedBold";
+                                width: 25%;
+                                padding: 10px 15px;
+                                font-size: 1.2em;
+                            }
 
-                                .MuiFormControl-root {
-                                    display: flex;
-                                    float: left;
-                                    height: 100%;
-                                    width: 70%;
-                                }
+                            .MuiFormControl-root {
+                                display: flex;
+                                float: left;
+                                height: 100%;
+                                width: 70%;
+                            }
                         }
                     }
 

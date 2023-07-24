@@ -1,10 +1,16 @@
 import './organize_camp.scss';
 import { useState } from "react";
-import { Link, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import { Box, MenuItem } from "@mui/material";
 import { TextField, Button, Typography } from "@mui/material";
 import banner_img1 from '../assets/images/1.png';
 import banner_img2 from '../assets/images/2.png';
+import img1 from '../assets/images/orgcamp1.jpg';
+import img2 from '../assets/images/orgcamp2.jpg';
+import img3 from '../assets/images/orgcamp3.jpg';
+import img4 from '../assets/images/orgcamp4.jpg';
+import img5 from '../assets/images/orgcamp5.jpg';
+import img6 from '../assets/images/orgcamp6.jpg';
 import Carousel from 'react-material-ui-carousel';
 
 
@@ -18,6 +24,20 @@ function Organize_camp(props) {
             bannerImg: banner_img2,
         },
     ];
+    let items2 = [
+        {
+            bannerImg1: img3,
+        },
+        {
+            bannerImg1: img4,
+        },
+        {
+            bannerImg1: img5,
+        },
+        {
+            bannerImg1: img6,
+        },
+    ]
     let textItems = [
         {
             text1: 'Organize A Blood Camp',
@@ -33,6 +53,15 @@ function Organize_camp(props) {
             <Paper>
                 <div className="banner_img">
                     <img src={props.item.bannerImg} alt="banner-image" />
+                </div>
+            </Paper>
+        );
+    }
+    function Item1(props) {
+        return (
+            <Paper>
+                <div className="banner1_img">
+                    <img src={props.item.bannerImg1} alt="banner-image" />
                 </div>
             </Paper>
         );
@@ -82,46 +111,103 @@ function Organize_camp(props) {
     ];
     return (
         <div className="container1">
-            <div className='sub1_container'>
-                    <div className="carousel_container">
+            <div className="carousel_container">
+                <Carousel
+                    className="banner_carousel"
+                    //   NextIcon={<CarouselNextIcon />}
+                    //   PrevIcon={<CarouselPrevIcon />}
+                    // navButtonsAlwaysInvisible={true}
+                    navButtonsAlwaysVisible={false}
+                    autoPlay={true}
+                    stopAutoPlayOnHover={false}
+                    interval={10000}
+                    animation={'slide'}
+                    swipe={true}
+                >
+                    {items.map((item, i) => (
+                        <Item key={i} item={item} />
+                    ))}
+
+                </Carousel>
+                <div className="carousel_overlay">
+                    <Carousel
+                        className='overlay_carousel'
+                        interval={6000}
+                        navButtonsAlwaysInvisible={true}
+                        indicators={false}
+                    >
+                        {textItems.map((item, i) => (
+                            <TextItem key={i} item={item} />
+                        ))}
+                    </Carousel>
+                    <Button
+                        className="register_btn"
+                        variant="contained"
+                    >
+                        <a href='#form' >REQUEST CALLBACK</a>
+                    </Button>
+                </div>
+            </div>
+            <div className='info1_container'>
+                <div className='info1_image'>
+                    <img className='i_img' src={img1} />
+                </div>
+                <div className='info1_text'>
+                    <h3>What are Blood Donation Camps</h3>
+                    <p>Rather than going to the hospital to donate blood, we bring the hospital to you.
+                        We partner with government recognized blood banks who bring their expert doctors and staff to conduct a clean blood donation camp without any hassles.
+                        The camp can be organized in a common area or in a blood donation bus which we can bring. We make all the other arrangements, you just have to provide a ventilated clean area.Now saving lives does not need any travel even,
+                        just 20 minutes at the camp!
+                    </p>
+                </div>
+            </div>
+            <div className='info2_container'>
+                <div className='info2_image'>
+                    <img className='i_img' src={img2} />
+                </div>
+                <div className='info2_text'>
+                    <h3>How we can make them different:</h3>
+                    <p>
+                        We do not just help you organize a camp, but we also try to ensure each donor feels special.
+                        A blood donation camp can be fun with music, it can have a theme, it can motivate people for greater things.
+                        We help you do that,right from motivating people before the camp to ensuring each donor feels a sense of pride and happiness post donation.
+                    </p>
+
+                </div>
+
+
+            </div>
+            <div className='form_container'>
+                <div className='left_container'>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            '& > :not(style)': {
+                                m: 1,
+                                width: 728,
+                            },
+                        }}
+                    >
                         <Carousel
                             className="banner_carousel"
                             //   NextIcon={<CarouselNextIcon />}
                             //   PrevIcon={<CarouselPrevIcon />}
-                            // navButtonsAlwaysInvisible={true}
-                            navButtonsAlwaysVisible={false}
+                            navButtonsAlwaysInvisible={true}
+                            // navButtonsAlwaysVisible={false}
                             autoPlay={true}
                             stopAutoPlayOnHover={false}
                             interval={10000}
                             animation={'slide'}
                             swipe={true}
                         >
-                            {items.map((item, i) => (
-                                <Item key={i} item={item} />
+                            {items2.map((item, i) => (
+                                <Item1 key={i} item={item} />
                             ))}
 
                         </Carousel>
-                        <div className="carousel_overlay">
-                            <Carousel
-                                className='overlay_carousel'
-                                interval={6000}
-                                navButtonsAlwaysInvisible={true}
-                                indicators={false}
-                            >
-                                {textItems.map((item, i) => (
-                                    <TextItem key={i} item={item} />
-                                ))}
-                            </Carousel>
-                            <Button
-                                className="register_btn"
-                                variant="contained"
-                            >
-                                <a href='#form' >REQUEST CALLBACK</a>
-                            </Button>
-                        </div>
-                    </div>
-            </div>
-            <div className='sub2_container'>
+                    </Box>
+                </div>
                 <div className='right_container'>
                     <Box
                         sx={{
@@ -179,9 +265,6 @@ function Organize_camp(props) {
                             </form>
                         </Paper>
                     </Box>
-                </div>
-                <div className='left_container'>
-
                 </div>
             </div>
 
