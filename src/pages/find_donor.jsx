@@ -3,7 +3,7 @@ import './find_donor.scss';
 import { Box, MenuItem, Paper } from "@mui/material";
 import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
-
+import collab from '../assets/images/collaborators.jpg';
 
 function Find_donor() {
     const [state, setState] = useState({
@@ -122,11 +122,11 @@ function Find_donor() {
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Email address*</label>
-                                            <TextField className="field" placeholder="example@domain.com" variant="standard" type="email"/>
+                                            <TextField className="field" placeholder="example@domain.com" variant="standard" type="email" />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Phone Number*</label>
-                                            <TextField className="field" placeholder="9999xxxxxx" variant="standard" type="tel"/>
+                                            <TextField className="field" placeholder="9999xxxxxx" variant="standard" type="tel" />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Units Required*</label>
@@ -178,7 +178,19 @@ function Find_donor() {
                         </Box>
                     </div>
                     <div className='form_right_container'>
-
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                '& > :not(style)': {
+                                    m: 1,
+                                    width: 728,
+                                },
+                            }}
+                        >
+                            <Typography>Our Collaborators</Typography>
+                            <img className='img_collab' src={collab} alt="collab"/>
+                        </Box>
                     </div>
                 </div>
 

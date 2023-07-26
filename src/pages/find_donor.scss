@@ -39,43 +39,54 @@
         }
 
         .form_container {
-            background-color: $light;
             display: flex;
-            @media screen and (max-width: 575px) {
+            width: 100%;
+            background-color: $light;
+            flex-direction: row;
+            @media screen and (max-width: 1023px) {
                 display: flex;
                 width: 100%;
+                align-items: center;
                 flex-direction: column;
             }
+
             .form_left_container {
                 width: 50%;
                 display: flex;
+
                 @media screen and (max-width: 1366px) {
-                    
+                    display: flex;
+                    width: 50%;
                 }
 
                 @media screen and (max-width: 1279px) {
-                    
+                    display: flex;
+                    width: 50%;
                 }
 
                 @media screen and (max-width: 1023px) {
-                    display: block;
+                    display: flex;
                     width: 100%;
                 }
 
                 @media screen and (max-width: 991px) {
-                    display: block;
+                    display: flex;
                     width: 100%;
                 }
 
                 @media screen and (max-width: 575px) {
-                    display: block;
+                    display: flex;
                     width: 100%;
                 }
+
                 .MuiBox-root {
+                    height: 100%;
                     display: flex;
                     float: left;
                     width: 100%;
+                    justify-content: center;
                     padding: 20px 20px;
+
                     .MuiPaper-root {
 
                         .MuiTypography-root {
@@ -115,23 +126,95 @@
                     }
                 }
             }
-            .form_right_container{
+
+            .form_right_container {
                 display: flex;
-                flex-direction: column;
-                width: 100%;
-                // @media screen and (max-width: 1023px) {
-                //     display: block;
-                //     width: 100%;
-                // }
-                // @media screen and (max-width: 991px) {
-                //     display: block;
-                //     width: 100%;
-                // }
-                // @media screen and (max-width: 575px) {
-                //     display: block;
-                //     width: 100%;
-                //     height: 500px;
-                // }
+                width: 50%;
+                @media screen and (max-width: 1366px) {
+                    display: flex;
+                    width: 50%;
+                }
+
+                @media screen and (max-width: 1279px) {
+                    display: flex;
+                    width: 50%;
+                }
+
+                @media screen and (max-width: 1023px) {
+                    display: flex;
+                    width: 70%;
+                }
+
+                @media screen and (max-width: 991px) {
+                    display: flex;
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 575px) {
+                    display: block;
+                    width: 100%;
+                }
+
+                .MuiBox-root {
+                    display: flex;
+                    width: 100%;
+                    float: right;
+                    padding: 20px 10px;
+                    justify-content: center;
+                    .MuiTypography-root{
+                        display: flex;
+                        color: $red;
+                        font-size: 2.6em;
+                        font-family: GillSans-Medium;
+                        justify-content: center;
+                        
+                    }
+
+                    // @media screen and (max-width: 1440px) {
+                    //     height: 90%;
+                    // }
+
+                    // @media screen and (max-width: 1200px) {
+                    //     height: 90%;
+                    // }
+
+                    // @media screen and (max-width: 991px) {
+                    //     height: 500px;
+                    // }
+
+                    // @media screen and (max-width: 768px) {
+                    //     height: 450px;
+                    // }
+
+                    // @media screen and (max-width: 576px) {
+                    //     height: 420px;
+                    // }
+                    .img_collab {
+                        display: block;
+                        width: 100%;
+                        @media screen and (max-width: 1440px) {
+                           
+                        }
+                        @media screen and (max-width: 1200px) {
+                            
+                        }
+    
+                        @media screen and (max-width: 991px) {
+                            height: auto;
+                            width: 70%;
+                        }
+    
+                        @media screen and (max-width: 768px) {
+                            height: auto;
+                            width: 70%;
+                        }
+    
+                        @media screen and (max-width: 576px) {
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }
