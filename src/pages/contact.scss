@@ -41,6 +41,8 @@
                     .form_head {
                         .text_head {
                             font-size: 1.8em;
+                            margin-top: 15px;
+                            margin-bottom: 10px;
                             text-align: center;
                             font-family: 'GillSans';
                             @media screen and (max-width: 575px) {
@@ -50,6 +52,7 @@
                         }
                         .text_content {
                             font-size: 1.2em;
+                            margin-bottom: 15px;
                             text-align: center;
                             font-family: 'GillSans';
                             @media screen and (max-width: 575px) {
