@@ -3,29 +3,42 @@ import './find_donor.scss';
 import { Box, MenuItem, Paper } from "@mui/material";
 import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
+import axios from 'axios';
 import collab from '../assets/images/collaborators.jpg';
 
 function Find_donor() {
-    const [state, setState] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        units: "",
-        blood: "",
-        region: ""
-    });
+    const [patientNameState, setPatientNameState] = useState('');
+    const [yourNameState, setYourNameState] = useState('');
+    const [emailAddressState, setEmailAddressState] = useState('');
+    const [phoneNumberState, setPhoneNumberState] = useState('');
+    const [unitsRequiredState, setUnitsRequiredState] = useState('');
+    const [bloodGroupState, setBloodGroupState] = useState('A+');
+    const [cityRegionState, setCityRegionState] = useState('--Select a Region--');
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setState((prevProps) => ({
-            ...prevProps,
-            [name]: value
-        }));
-    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(state);
+        // Create the formData object to send to the backend
+        const formData = {
+            patient_name: patientNameState,
+            your_name: yourNameState,
+            email_address: emailAddressState,
+            phone_number: phoneNumberState,
+            units_required: unitsRequiredState,
+            blood_group: bloodGroupState,
+            city_region: cityRegionState,
+        };
+
+        // Send form data to the backend
+        axios.post('http://localhost:8000/submit-form', formData)
+            .then((response) => {
+                // Handle successful form submission (if needed)
+                console.log(response.data);
+            })
+            .catch((error) => {
+                // Handle form submission error (if needed)
+                console.error('Error submitting form:', error);
+            });
     };
 
     const City = [
@@ -110,23 +123,48 @@ function Find_donor() {
                             }}
                         >
                             <Paper elevation={4} >
-                                <form onSubmit={handleSubmit}>
+                                <form >
                                     <Typography sx={{ fontSize: 15, mb: 1.5 }} color="text.secondary" >
                                         <div className="form_fields">
                                             <label className="lables">Patient Name*</label>
-                                            <TextField className="field" margin="normal" placeholder="Patient Name" variant="standard" />
+                                            <TextField
+                                                className="field" margin="normal"
+                                                placeholder="Patient Name"
+                                                variant="standard"
+                                                name="patientName"
+                                                value={patientNameState}
+                                                onChange={(e) => setPatientNameState(e.target.value)} />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Your Name*</label>
-                                            <TextField className="field" placeholder="Your Name" variant="standard" />
+                                            <TextField
+                                                className="field"
+                                                placeholder="Your Name"
+                                                variant="standard"
+                                                name="yourName"
+                                                value={yourNameState}
+                                                onChange={(e) => setYourNameState(e.target.value)} />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Email address*</label>
-                                            <TextField className="field" placeholder="example@domain.com" variant="standard" type="email" />
+                                            <TextField
+                                                className="field"
+                                                placeholder="example@domain.com"
+                                                variant="standard"
+                                                type="email"
+                                                name="emailAddress"
+                                                value={emailAddressState}
+                                                onChange={(e) => setEmailAddressState(e.target.value)} />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Phone Number*</label>
-                                            <TextField className="field" placeholder="9999xxxxxx" variant="standard" type="tel" />
+                                            <TextField className="field"
+                                                placeholder="9999xxxxxx"
+                                                variant="standard"
+                                                type="tel"
+                                                name="phoneNumber"
+                                                value={phoneNumberState}
+                                                onChange={(e) => setPhoneNumberState(e.target.value)} />
                                         </div>
                                         <div className="form_fields">
                                             <label className="lables">Units Required*</label>
@@ -137,6 +175,9 @@ function Find_donor() {
                                                 InputLabelProps={{
                                                     shrink: true,
                                                 }}
+                                                name="unitsRequired"
+                                                value={unitsRequiredState}
+                                                onChange={(e) => setUnitsRequiredState(e.target.value)}
                                             />
                                         </div>
                                         <div className="form_fields">
@@ -146,6 +187,9 @@ function Find_donor() {
                                                 select
                                                 defaultValue="A+"
                                                 variant="standard"
+                                                name="bloodGroup"
+                                                value={bloodGroupState}
+                                                onChange={(e) => setBloodGroupState(e.target.value)}
                                             >
                                                 {blood.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -161,6 +205,9 @@ function Find_donor() {
                                                 select
                                                 defaultValue="--Select a Region--"
                                                 variant="standard"
+                                                name="cityRegion"
+                                                value={cityRegionState}
+                                                onChange={(e) => setCityRegionState(e.target.value)}
                                             >
                                                 {City.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -171,7 +218,12 @@ function Find_donor() {
                                         </div>
                                     </Typography>
                                     <div className="create_request">
-                                        <Button variant="contained" >Create Request</Button>
+                                        <Button
+                                            variant="contained"
+                                            onClick={handleSubmit}
+                                        >
+                                            Create Request
+                                        </Button>
                                     </div>
                                 </form>
                             </Paper>
@@ -189,7 +241,7 @@ function Find_donor() {
                             }}
                         >
                             <Typography>Our Collaborators</Typography>
-                            <img className='img_collab' src={collab} alt="collab"/>
+                            <img className='img_collab' src={collab} alt="collab" />
                         </Box>
                     </div>
                 </div>
@@ -197,5 +249,6 @@ function Find_donor() {
             </div>
         </div>
     )
-}
+};
+
 export default Find_donor;
