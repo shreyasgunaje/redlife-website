@@ -13,8 +13,38 @@ import img5 from '../assets/images/orgcamp5.jpg';
 import img6 from '../assets/images/orgcamp6.jpg';
 import Carousel from 'react-material-ui-carousel';
 import { CarouselNextIcon, CarouselPrevIcon } from '../shared/icon';
+import axios from 'axios';
 
 function Organize_camp(props) {
+
+    const [yourNameState, setYourNameState] = useState('');
+    const [emailAddressState, setEmailAddressState] = useState('');
+    const [phoneNumberState, setPhoneNumberState] = useState('');
+    const [cityRegionState, setCityRegionState] = useState('--Select a Region--');
+    const [organizationNameState,setOrganizationNameState] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Create the formData object to send to the backend
+        const formData = {
+            your_name: yourNameState,
+            email_address: emailAddressState,
+            phone_number: phoneNumberState,
+            city_region: cityRegionState,
+            name_of_organization: organizationNameState
+        };
+
+        // Send form data to the backend
+        axios.post('http://localhost:8000/submit-form2', formData)
+            .then((response) => {
+                // Handle successful form submission (if needed)
+                console.log(response.data);
+            })
+            .catch((error) => {
+                // Handle form submission error (if needed)
+                console.error('Error submitting form:', error);
+            });
+    };
 
     let items = [
         {
@@ -78,18 +108,6 @@ function Organize_camp(props) {
             </div>
         )
     }
-    const [state, setState] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        units: "",
-        blood: "",
-        region: ""
-    });
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(state);
-    };
 
     const City = [
         {
@@ -221,7 +239,7 @@ function Organize_camp(props) {
                     >
                         <Paper elevation={24} >
 
-                            <form id="form" onSubmit={handleSubmit}>
+                            <form id="form" >
                                 <Typography sx={{ fontSize: 15, mb: 1.5 }} color="text.secondary" >
                                     <div className='form_head'>
                                         <div className='text_head'>Organize a camp</div>
@@ -229,15 +247,35 @@ function Organize_camp(props) {
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Your Name*</label>
-                                        <TextField className="field" placeholder="Your Name" variant="standard" />
+                                        <TextField
+                                            className="field"
+                                            placeholder="Your Name"
+                                            variant="standard" 
+                                            name="yourName"
+                                            value={yourNameState}
+                                            onChange={(e) => setYourNameState(e.target.value)}/>
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Email address*</label>
-                                        <TextField className="field" placeholder="example@domain.com" variant="standard" />
+                                        <TextField
+                                            className="field"
+                                            placeholder="example@domain.com"
+                                            variant="standard" 
+                                            name="emailAddress"
+                                                value={emailAddressState}
+                                                onChange={(e) => setEmailAddressState(e.target.value)}
+                                           />
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Phone Number*</label>
-                                        <TextField type="tel" className="field" placeholder="9999xxxxxx" variant="standard" />
+                                        <TextField
+                                            type="tel"
+                                            className="field"
+                                            placeholder="9999xxxxxx"
+                                            variant="standard" 
+                                            name="phoneNumber"
+                                                value={phoneNumberState}
+                                                onChange={(e) => setPhoneNumberState(e.target.value)}/>
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">City Region*</label>
@@ -246,7 +284,11 @@ function Organize_camp(props) {
                                             select
                                             defaultValue="--Select a Region--"
                                             variant="standard"
-                                        >
+                                            name="cityRegion"
+                                                value={cityRegionState}
+                                                onChange={(e) => setCityRegionState(e.target.value)}
+                                            >
+                                        
                                             {City.map((option) => (
                                                 <MenuItem key={option.value} value={option.value}>
                                                     {option.label}
@@ -256,11 +298,23 @@ function Organize_camp(props) {
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Name of Organization*</label>
-                                        <TextField className="field" placeholder="Your Organization Name" variant="standard" />
+                                        <TextField
+                                            className="field"
+                                            placeholder="Your Organization Name"
+                                            variant="standard"
+                                            name="cityRegion"
+                                            value={organizationNameState}
+                                            onChange={(e) => setOrganizationNameState(e.target.value)}
+                                        />
                                     </div>
                                 </Typography>
                                 <div className="create_request">
-                                    <Button variant="contained" >Create Request</Button>
+                                    <Button
+                                        variant="contained"
+                                        onClick={handleSubmit}
+                                    >
+                                        Create Request
+                                    </Button>
                                 </div>
                             </form>
                         </Paper>
