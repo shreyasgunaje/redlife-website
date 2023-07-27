@@ -6,8 +6,8 @@ import './Main.scss';
 
 const Main = (props) => {
 
-    // const isLoginOrDashboard = window.location.pathname.includes('/login') || window.location.pathname.includes('/registered') || window.location.pathname.includes('/dashboard');
-    const isLoginOrDashboard = window.location.pathname.includes('/login' || '/register' || '/dashboard');
+    const isLoginOrDashboard = window.location.pathname.includes('/login') || window.location.pathname.includes('/register') || window.location.pathname.includes('/dashboard');
+    // const isLoginOrDashboard = window.location.pathname.includes('/login' || '/register' || '/dashboard');
 
     return(
         <div className="main_container" id="wrapper">

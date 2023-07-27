@@ -61,7 +61,7 @@ function Login() {
               <CssBaseline />
               <Box
                 sx={{
-                  marginTop: 2,
+                  marginTop: 3,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -108,12 +108,12 @@ function Login() {
                   </Button>
                   <Grid container>
                     <Grid item xs>
-                      <Link href="#" variant="body2" color={'#7a0303'}>
+                      <Link href="#" variant="body2" color={'#7a0303'} style={{whiteSpace: 'nowrap'}}>
                         Forgot password?
                       </Link>
                     </Grid>
-                    <Grid item>
-                      <Link href="#" variant="body2" color={'#7a0303'}>
+                    <Grid item >
+                      <Link href="/register" variant="body2" color={'#7a0303'} style={{whiteSpace: 'nowrap'}}>
                         {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>
