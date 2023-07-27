@@ -12,9 +12,10 @@ function Find_donor() {
     const [emailAddressState, setEmailAddressState] = useState('');
     const [phoneNumberState, setPhoneNumberState] = useState('');
     const [unitsRequiredState, setUnitsRequiredState] = useState('');
-    const [bloodGroupState, setBloodGroupState] = useState('A+');
+    const [bloodGroupState, setBloodGroupState] = useState('Any');
     const [cityRegionState, setCityRegionState] = useState('--Select a Region--');
 
+    const [successMessage,setSuccessMessage] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -32,7 +33,19 @@ function Find_donor() {
         // Send form data to the backend
         axios.post('http://localhost:8000/submit-form', formData)
             .then((response) => {
+                setPatientNameState('');
+                setYourNameState('');
+                setEmailAddressState('');
+                setPhoneNumberState('');
+                setUnitsRequiredState('');
+                setBloodGroupState('Any');
+                setCityRegionState('--Select a Region--');
                 // Handle successful form submission (if needed)
+
+                setSuccessMessage('Request sent successfully');
+
+                window.alert('Request sent successfully');
+
                 console.log(response.data);
             })
             .catch((error) => {
@@ -185,7 +198,7 @@ function Find_donor() {
                                             <TextField
                                                 id="standard-select-bloodgroup"
                                                 select
-                                                defaultValue="A+"
+                                                defaultValue="Any"
                                                 variant="standard"
                                                 name="bloodGroup"
                                                 value={bloodGroupState}

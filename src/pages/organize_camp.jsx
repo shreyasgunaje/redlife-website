@@ -21,7 +21,9 @@ function Organize_camp(props) {
     const [emailAddressState, setEmailAddressState] = useState('');
     const [phoneNumberState, setPhoneNumberState] = useState('');
     const [cityRegionState, setCityRegionState] = useState('--Select a Region--');
-    const [organizationNameState,setOrganizationNameState] = useState('');
+    const [organizationNameState, setOrganizationNameState] = useState('');
+
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -37,7 +39,19 @@ function Organize_camp(props) {
         // Send form data to the backend
         axios.post('http://localhost:8000/submit-form2', formData)
             .then((response) => {
+                setYourNameState('')
+                setEmailAddressState('')
+                setPhoneNumberState('')
+                setCityRegionState('')
+                setOrganizationNameState('')
                 // Handle successful form submission (if needed)
+
+                // Set the success message
+                setSuccessMessage('Request sent successfully!');
+
+                // Display the pop-up alert
+                window.alert('Request sent successfully!');
+
                 console.log(response.data);
             })
             .catch((error) => {
@@ -168,7 +182,7 @@ function Organize_camp(props) {
             </div>
             <div className='info1_container'>
                 <div className='info1_image'>
-                    <img className='i_img' src={img1} />
+                    <img className='i_img' src={img1} alt="image1" />
                 </div>
                 <div className='info1_text'>
                     <h3>What are Blood Donation Camps</h3>
@@ -181,7 +195,7 @@ function Organize_camp(props) {
             </div>
             <div className='info2_container'>
                 <div className='info2_image'>
-                    <img className='i_img' src={img2} />
+                    <img className='i_img' src={img2} alt="img2" />
                 </div>
                 <div className='info2_text'>
                     <h3>How we can make them different:</h3>
@@ -250,21 +264,21 @@ function Organize_camp(props) {
                                         <TextField
                                             className="field"
                                             placeholder="Your Name"
-                                            variant="standard" 
+                                            variant="standard"
                                             name="yourName"
                                             value={yourNameState}
-                                            onChange={(e) => setYourNameState(e.target.value)}/>
+                                            onChange={(e) => setYourNameState(e.target.value)} />
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Email address*</label>
                                         <TextField
                                             className="field"
                                             placeholder="example@domain.com"
-                                            variant="standard" 
+                                            variant="standard"
                                             name="emailAddress"
-                                                value={emailAddressState}
-                                                onChange={(e) => setEmailAddressState(e.target.value)}
-                                           />
+                                            value={emailAddressState}
+                                            onChange={(e) => setEmailAddressState(e.target.value)}
+                                        />
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">Phone Number*</label>
@@ -272,10 +286,10 @@ function Organize_camp(props) {
                                             type="tel"
                                             className="field"
                                             placeholder="9999xxxxxx"
-                                            variant="standard" 
+                                            variant="standard"
                                             name="phoneNumber"
-                                                value={phoneNumberState}
-                                                onChange={(e) => setPhoneNumberState(e.target.value)}/>
+                                            value={phoneNumberState}
+                                            onChange={(e) => setPhoneNumberState(e.target.value)} />
                                     </div>
                                     <div className="form_fields">
                                         <label className="lables">City Region*</label>
@@ -285,10 +299,10 @@ function Organize_camp(props) {
                                             defaultValue="--Select a Region--"
                                             variant="standard"
                                             name="cityRegion"
-                                                value={cityRegionState}
-                                                onChange={(e) => setCityRegionState(e.target.value)}
-                                            >
-                                        
+                                            value={cityRegionState}
+                                            onChange={(e) => setCityRegionState(e.target.value)}
+                                        >
+
                                             {City.map((option) => (
                                                 <MenuItem key={option.value} value={option.value}>
                                                     {option.label}
