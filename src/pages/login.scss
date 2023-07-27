@@ -1,0 +1,111 @@
+@import '../variable.scss';
+@import '../assets/fonts/fonts.scss';
+
+.auth_body{
+    background-image: linear-gradient($light, $light-red);
+    // background-color: $light-red;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // .title_container{
+    //     display: flex;
+    //     padding: 1%;
+    //     margin-left: 60px;
+    //     // @media screen and (max-width: 1200px) {
+    //     //     margin-left: 35px;
+    //     // }
+    //     @media screen and (max-width: 991px) {
+    //         margin-left: 30px;
+    //         padding: 1.5%;
+    //     }
+    //     @media screen and (max-width: 768px) {
+    //         margin-left: 20px;
+    //         padding: 2%;
+    //     }
+    //     @media screen and (max-width: 576px) {
+    //         margin-left: 10px;
+    //         padding: 2.5%;
+    //     }
+    //     .header_icon{
+    //         width: 35px;
+    //         max-height: 35px;
+    //         @media screen and (max-width: 300px) {
+    //             width: 30px;
+    //             max-height: 30px;
+    //         }
+    //     }
+    //     .header_title{
+    //         color: $white;
+    //         font-size: 1.6em;
+    //         font-family: GillSans-BoldItalic;
+    //         @media screen and (max-width: 300px) {
+    //             font-size: 1.4em;
+    //         }
+    //     }
+    // }
+    .title_container{
+        display: flex;
+        padding: 1%;
+        margin-left: 60px;
+        @media screen and (max-width: 1200px) {
+            margin-left: 45px;
+        }
+        @media screen and (max-width: 992px) {
+            margin-left: 30px;
+        }
+        @media screen and (max-width: 768px) {
+            margin-left: 20px;
+        }
+        @media screen and (max-width: 576px) {
+            margin-left: 10px;
+        }
+        .footer_icon{
+            width: 35px;
+            max-height: 35px;
+            // @media screen and (max-width: 768px) {
+            //     width: 32px;
+            //     max-height: 32px;
+            // }
+            // @media screen and (max-width: 576px) {
+            //     width: 27px;
+            //     max-height: 27px;
+            // }
+            @media screen and (max-width: 300px) {
+                width: 30px;
+                max-height: 30px;
+            }
+        }
+        .footer_title{
+            color: $red_2;
+            font-size: 1.6em;
+            font-family: GillSans-BoldItalic;
+            span{
+                color: $dark_red;
+            }
+            // @media screen and (max-width: 768px) {
+            //     font-size: 1.5em;
+            // }
+            // @media screen and (max-width: 576px) {
+            //     font-size: 1.4em;
+            // }
+            @media screen and (max-width: 300px) {
+                font-size: 1.4em;
+            }
+        }
+    }
+    .auth_inner{
+        width: 500px;
+        margin: auto;
+        background-color: $white;
+        border-radius: 4px;
+        @media screen and (max-width: 991px) {
+            width: 450px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 400px;
+        }
+        @media screen and (max-width: 576px) {
+            width: 300px;
+        }
+    }
+}

@@ -197,7 +197,7 @@ function Header() {
 					startIcon={<LogInUserIcon />}
 					endIcon={<LogArrowIcon />}
 					onClick={(e) => {
-						window.open('');
+						window.open('/login');
 					}}
 				>
 					<span>LOGIN</span>

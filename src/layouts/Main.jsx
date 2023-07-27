@@ -4,12 +4,19 @@ import Footer from '../shared/footer.jsx';
 import Header from '../shared/header.jsx';
 import './Main.scss';
 
-const Main = (props) => (
-    <div className="main_container" id="wrapper">
-        <Header/>
-        <Outlet />
-        <Footer/>
-    </div>
-);
+const Main = (props) => {
+
+    // const isLoginOrDashboard = window.location.pathname.includes('/login') || window.location.pathname.includes('/registered') || window.location.pathname.includes('/dashboard');
+    const isLoginOrDashboard = window.location.pathname.includes('/login' || '/register' || '/dashboard');
+
+    return(
+        <div className="main_container" id="wrapper">
+            {!isLoginOrDashboard && <Header />}
+            <Outlet />
+            {!isLoginOrDashboard && <Footer />}
+        </div>
+    )
+    
+};
 
 export default Main;

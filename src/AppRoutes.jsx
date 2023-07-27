@@ -6,6 +6,7 @@ import Contact from "./pages/contact"
 import Join from "./pages/join"
 import Organize_camp from "./pages/organize_camp"
 import Find_donor from "./pages/find_donor"
+import Login from "./pages/login"
 
 const AppRoutes = (props) => {
     return(
@@ -18,6 +19,7 @@ const AppRoutes = (props) => {
                     <Route path="find-a-donor" element={<Find_donor/>}/>
                     <Route path="organize-a-camp" element={<Organize_camp/>}/>
                     <Route path="join-us" element={<Join/>}/>
+                    <Route path="login" element={<Login/>}/>
                     <Route path='' element={<Navigate to ='/home'/>}/>
                 </Route>
             </Routes>
