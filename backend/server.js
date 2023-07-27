@@ -27,7 +27,8 @@ pool.connect((err, client, release) => {
   client.release();
 });
 
-// Your routes for handling form submissions will be defined here.
+// Route for handling form submission of find a donor.
+
 app.post('/submit-form', (req, res) => {
   // Extract data from the request body
   const {
@@ -66,6 +67,41 @@ app.post('/submit-form', (req, res) => {
     }
   });
 });
+// Route for handling form submission of Organize a camp.
+app.post('/submit-form2', (req, res) => {
+    // Extract data from the request body
+    const {
+      your_name,
+      email_address,
+      phone_number,
+      city_region,
+      name_of_organization,
+    } = req.body;
+  
+  
+    // Insert the data into the PostgreSQL database
+    const insertQuery = `
+      INSERT INTO organizeacamp (your_name, email_address, phone_number, city_region, name_of_organization)
+      VALUES ($1, $2, $3, $4, $5)
+    `;
+    const values = [
+      your_name,
+      email_address,
+      phone_number,
+      city_region,
+      name_of_organization,
+    ];
+  
+    // Execute the query and handle any errors
+    pool.query(insertQuery, values, (error, result) => {
+      if (error) {
+        console.error('Error inserting data:', error);
+        res.status(500).json({ error: 'Error inserting data' });
+      } else {
+        res.status(201).json({ message: 'Form data inserted successfully' });
+      }
+    });
+  });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
