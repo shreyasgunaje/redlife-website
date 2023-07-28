@@ -70,7 +70,7 @@ function Login() {
                 <Avatar sx={{ m: 1, bgcolor: '#7a0303' }}>
                   <LockOutlinedIcon />
                 </Avatar>
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" >
                   Sign in
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>

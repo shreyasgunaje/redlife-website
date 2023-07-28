@@ -196,7 +196,7 @@ function Home() {
 					  className="register_btn"
 					  variant="contained"
 					  onClick={(e) => {
-						  window.open('');
+						  window.open('/register');
 					  }}
 				  >
 					  <span>REGISTER NOW</span>
