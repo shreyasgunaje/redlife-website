@@ -3,8 +3,8 @@
 
 .auth_body{
     background-image: linear-gradient($light, $light-red);
-    // background-color: $light-red;
-    height: 100vh;
+    // background-color: $light;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     // .title_container{
@@ -54,10 +54,12 @@
             margin-left: 30px;
         }
         @media screen and (max-width: 768px) {
-            margin-left: 20px;
+            margin: auto 0px 20px;
+            justify-content: center;
         }
         @media screen and (max-width: 576px) {
-            margin-left: 10px;
+            margin: auto 0px 20px;
+            justify-content: center;
         }
         .footer_icon{
             width: 35px;
@@ -96,7 +98,8 @@
     .auth_inner{
         width: 500px;
         margin: auto;
-        background-color: $white;
+        margin-bottom: 40px;
+        background-color: rgb(255,255,255,0.6);
         border-radius: 4px;
         @media screen and (max-width: 991px) {
             width: 450px;
@@ -105,7 +108,8 @@
             width: 400px;
         }
         @media screen and (max-width: 576px) {
-            width: 300px;
+            width: 330px;
+            // margin-bottom: auto
         }
     }
 }

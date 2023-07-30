@@ -1,9 +1,14 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const { Pool } = require('pg');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8000; 
 const cors = require("cors"); // Import the cors package
+
+const dbPassword = 'gunaje@551'
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,7 +19,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost', // or your database host
   database: 'findadonor',
-  password: 'dev@redlife',
+  password: dbPassword,
   port: 5432, // or your database port
 });
 
