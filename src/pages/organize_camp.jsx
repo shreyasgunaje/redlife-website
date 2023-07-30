@@ -50,7 +50,7 @@ function Organize_camp(props) {
                 setSuccessMessage('Request sent successfully!');
 
                 // Display the pop-up alert
-                window.alert('Request sent successfully!');
+                window.alert('Request sent successfully!\n Our Volunteer will be in touch soon..');
 
                 console.log(response.data);
             })
@@ -133,12 +133,16 @@ function Organize_camp(props) {
             label: 'Udupi',
         },
         {
-            value: 'Manglore',
-            label: 'Manglore',
+            value: 'Mangalore',
+            label: 'Mangalore',
         },
         {
-            value: 'Hassan',
-            label: 'Hassan',
+            value: 'Karkala',
+            label: 'Karkala',
+        },
+        {
+            value: 'Puttur',
+            label: 'Puttur',
         },
     ];
     return (

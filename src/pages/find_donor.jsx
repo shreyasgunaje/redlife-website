@@ -2,9 +2,20 @@ import React from 'react';
 import './find_donor.scss';
 import { Box, MenuItem, Paper } from "@mui/material";
 import { useState } from "react";
-import { TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography, Dialog, DialogContent } from "@mui/material";
 import axios from 'axios';
 import collab from '../assets/images/collaborators.jpg';
+
+function DonorDetails({ donor }) {
+    return (
+        <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
+            <Typography variant="subtitle1">Donor Name: {donor.donor_name}</Typography>
+            <Typography variant="body1">Email: {donor.email_address}</Typography>
+            <Typography variant="body1">Phone: {donor.phone_number}</Typography>
+            <Typography variant="body1">Blood Group: {donor.blood_group}</Typography>
+        </Paper>
+    );
+}
 
 function Find_donor() {
     const [patientNameState, setPatientNameState] = useState('');
@@ -15,7 +26,9 @@ function Find_donor() {
     const [bloodGroupState, setBloodGroupState] = useState('Any');
     const [cityRegionState, setCityRegionState] = useState('--Select a Region--');
 
-    const [successMessage,setSuccessMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [showDonors, setShowDonors] = useState(false);
+    const [donorsList, setDonorsList] = useState([]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,6 +59,20 @@ function Find_donor() {
 
                 window.alert('Request sent successfully');
 
+                // After a successful form submission, fetch donors with the same city/region
+                axios.get(`http://localhost:8000/get-donors?city_region=${cityRegionState}`)
+                    .then((response) => {
+                        const donors = response.data.donors;
+                        // Handle the fetched donors and displaying them in the UI
+
+                        setDonorsList(donors);
+                        setShowDonors(true); // Show the donors' details in MUI Paper
+                        console.log('Fetched donors:', donors);
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching donors:', error);
+                    });
+
                 console.log(response.data);
             })
             .catch((error) => {
@@ -68,8 +95,12 @@ function Find_donor() {
             label: 'Mangalore',
         },
         {
-            value: 'Hassan',
-            label: 'Hassan',
+            value: 'Karkala',
+            label: 'Karkala',
+        },
+        {
+            value: 'Puttur',
+            label: 'Puttur',
         },
     ];
 
@@ -85,6 +116,10 @@ function Find_donor() {
         {
             value: 'B+',
             label: 'B+',
+        },
+        {
+            value: 'B-',
+            label: 'B-',
         },
         {
             value: 'AB+',
@@ -238,6 +273,15 @@ function Find_donor() {
                                             Create Request
                                         </Button>
                                     </div>
+                                    {/* A dialog will open showing the Donors list when showDonors(boolean) which is true */}
+                                    <Dialog open={showDonors} onClose={() => setShowDonors(false)}>
+                                        <DialogContent >
+                                            <Typography>Available Donors</Typography>
+                                            {donorsList.map((donor) => (
+                                                <DonorDetails key={donor.donor_name} donor={donor} />
+                                            ))}
+                                        </DialogContent>
+                                    </Dialog>
                                 </form>
                             </Paper>
                         </Box>

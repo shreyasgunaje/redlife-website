@@ -103,6 +103,28 @@ app.post('/submit-form2', (req, res) => {
     });
   });
 
+  //Route for fetching the donor from the database based on clause
+  app.get('/get-donors', (req, res) => {
+    const { city_region } = req.query;
+  
+    // Implementation of the logic to fetch donors from the database based on the provided city/region
+    const selectQuery = `
+      SELECT donor_name, email_address, phone_number, blood_group
+      FROM donor
+      WHERE city_region = $1
+    `;
+  
+    pool.query(selectQuery, [city_region], (error, result) => {
+      if (error) {
+        console.error('Error fetching donors:', error);
+        res.status(500).json({ error: 'Error fetching donors' });
+      } else {
+        const donors = result.rows;
+        res.status(200).json({ donors });
+      }
+    });
+  });
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
